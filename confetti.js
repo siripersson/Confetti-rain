@@ -9,7 +9,7 @@
 // t.ex. baserat på slump eller baserat på inparametern groupName
 // så kan det istället bli en blandning av färger.
 const chooseParticleColor = (groupName) => {
-  return 'gray'
+  return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
 
@@ -26,14 +26,14 @@ const bang = (addConfettiParticles) => {
   // sprider ut sig från varandra samt ett gruppnamn som skickas in i
   // chooseParticleColor. Ändra på dessa värden och se vad som händer!
   addConfettiParticles({
-    groupName: 'lonely sad confetti',  // Valfritt namn på gruppen
-    particleAmount: 1,  // Antal konfettipartiklar
+    groupName: 'confetti-rain',  // Valfritt namn på gruppen
+    particleAmount: 200,  // Antal konfettipartiklar
     xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
     yPosition: 50,      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
     xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
-    yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
-    xSpread: 80,        // Slumpmässig spridning på partikelns hastighet i sidled
-    ySpread: 20         // Slumpmässig spridning på partikelns hastighet i höjdled
+    yVelocity: 3,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
+    xSpread: 70,        // Slumpmässig spridning på partikelns hastighet i sidled
+    ySpread: 70         // Slumpmässig spridning på partikelns hastighet i höjdled
   })
 }
 

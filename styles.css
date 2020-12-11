@@ -5,8 +5,8 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  color: #001932;
-  background-color: #f0f7e6;
+  color: #313200;
+  background-color: #f7f7e6;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 button {
   padding: 12px;
   color: #fff;
-  background-color: #00d773;
+  background-color: #be005f;
   border: none;
   border-radius: 4px;
   font-size: 15px;
@@ -32,12 +32,12 @@ button {
 
 button:hover {
   color: #fff;
-  background-color: #00f181;
+  background-color: #be005f;
 }
 
 button:active {
   color: #fff;
-  background-color: #00be65;
+  background-color: #be005f;
 }
 
 .flex-row {
