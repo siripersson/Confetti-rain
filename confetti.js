@@ -1,44 +1,31 @@
-// Om du tittar på projektet i browsern ser du en ensam grå
-// och lite sorglig konfettipartikel. Din uppgift blir att
-// fylla konfettianimationen med färger och liv!
 
-// Funktionen chooseParticleColor styr färgen på varje enskild
-// partikel. Den ska returnera en text-sträng som innehåller en
-// CSS-färg. Returnerar den samma färg varje gång så kommer alla
-// partiklar ha samma färg men om den returnerar olika färger
-// t.ex. baserat på slump eller baserat på inparametern groupName
-// så kan det istället bli en blandning av färger.
-const chooseParticleColor = (groupName) => {
+/**
+ * Generates a random color for each particle.
+ * Returns a string that contains the CSS-color. 
+ */
+const chooseParticleColor = () => {
   return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
-
-// Denna funktion anropas för att skjuta ut konfetti. Funktionen
-// som kommer in som parameter addConfettiParticles kan anropas en
-// eller flera gånger för att skjuta konfetti åt olika håll och
-// från olika platser på skärmen
-
+/**
+ * Creates the confetti-rain
+ * @param {} addConfettiParticles 
+ */
 const bang = (addConfettiParticles) => {
-  // Funktionen addConfettiParticles tar in ett antal parametrar
-  // för att styra hur en konfettiexplosion ser ut. Antalet partiklar,
-  // var på skärmen som partiklarna kommer ifrån, vilken riktning
-  // (och med vilken hastighet) de flyger, hur mycket partiklarna
-  // sprider ut sig från varandra samt ett gruppnamn som skickas in i
-  // chooseParticleColor. Ändra på dessa värden och se vad som händer!
+  /**
+   * Regulates the different parameters of the confetti-rain
+   */
   addConfettiParticles({
-    groupName: 'confetti-rain',  // Valfritt namn på gruppen
-    particleAmount: 200,  // Antal konfettipartiklar
-    xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
-    yPosition: 50,      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
-    xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
-    yVelocity: 3,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
-    xSpread: 70,        // Slumpmässig spridning på partikelns hastighet i sidled
-    ySpread: 70         // Slumpmässig spridning på partikelns hastighet i höjdled
+    numberOfParticles: 200, 
+    xPosition: 50,     
+    yPosition: 50,      
+    xVelocity: 0,       
+    yVelocity: 3,       
+    xRandomSpread: 70,        
+    yRandomSpread: 70         
   })
 }
 
-// Här exporterar vi funktionerna så att de kan användas i
-// confetti-creator-filen som du inte behöver bry dig om
 export {
   chooseParticleColor,
   bang

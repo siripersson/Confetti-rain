@@ -1,22 +1,20 @@
-// Den här filen behöver du inte bry dig om.
-// Men tjuvkika gärna!
 
 import { chooseParticleColor, bang } from '../confetti.js'
 
-const addConfettiParticles = ({ groupName, particleAmount, xPosition, yPosition, xVelocity, yVelocity, xSpread, ySpread }) => {
+const addConfettiParticles = ({numberOfParticles, xPosition, yPosition, xVelocity, yVelocity, xRandomSpread, yRandomSpread }) => {
   let i = 0
-  while (i < particleAmount) {
+  while (i < numberOfParticles) {
     const r = _.random(5, 10)
     const d = _.random(13, 15)
 
-    const color = chooseParticleColor(groupName)
+    const color = chooseParticleColor()
 
     const tilt = _.random(-10, 10)
     const tiltAngleIncremental = _.random(5, 15) / 100
     const tiltAngle = 10
     const angle = _.random(180)
-    const velocityX = _.random(xVelocity - xSpread / 100, xVelocity + xSpread / 100) / 100
-    const velocityY = _.random(yVelocity - ySpread / 100, yVelocity + ySpread / 100) / 100
+    const velocityX = _.random(xVelocity - xRandomSpread / 100, xVelocity + xRandomSpread / 100) / 100
+    const velocityY = _.random(yVelocity - yRandomSpread / 100, yVelocity + yRandomSpread / 100) / 100
     const gravity = CONSTANTS.baseGravity
     const airFrictionX = window.innerWidth * CONSTANTS.baseAirFrictionX
     const airFrictionY = Math.min(window.innerWidth, window.innerHeight) * CONSTANTS.baseAirFrictionY
